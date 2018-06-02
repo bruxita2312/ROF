@@ -23,17 +23,27 @@ Vagrant.configure('2') do |config |
       os.image              = ENV['OS_IMAGE']
     end
 
-   config.vm.define 'linux_server_1' do |s|
+   config.vm.define 'rf_server_1' do |s|
     s.vm.provider :openstack do |os, override|
       os.server_name = 'rf-gocd-vm-1'
       os.flavor = 'f2.desktop.medium'
       override.vm.synced_folder '.', '/vagrant', disabled: true
     end
   end
-  config.vm.define 'linux_server_2' do |s|
+  config.vm.define 'rf_server_2' do |s|
     s.vm.provision "docker"
+	s.vm.provision "docker_compose"
     s.vm.provider :openstack do |os, override|
       os.server_name = 'rf-gocd-vm-2'
+      os.flavor = 'f2.desktop.medium'
+      override.vm.synced_folder '.', '/vagrant', disabled: true
+    end
+  end
+  config.vm.define 'rf_server_3' do |s|
+    s.vm.provision "docker"
+	s.vm.provision "docker_compose"
+    s.vm.provider :openstack do |os, override|
+      os.server_name = 'rf-gocd-vm-3'
       os.flavor = 'f2.desktop.medium'
       override.vm.synced_folder '.', '/vagrant', disabled: true
     end
