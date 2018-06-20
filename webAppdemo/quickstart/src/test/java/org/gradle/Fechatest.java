@@ -9,7 +9,7 @@ public class Fechatest {
     public void test_getFechaActual(){
     	Fecha tester = new Fecha();
 		String fechaActual = tester.getFechaActual();
-		Assert.assertEquals(fechaActual,"16/06/2018");
+		Assert.assertEquals(fechaActual,"19/06/2018");
     }
 
     @Test

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.gradle.Fechatest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-06-16T20:33:21" hostname="Bruxita" time="0.007">
+<testsuite name="org.gradle.Fechatest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-06-18T13:37:56" hostname="C304-010" time="0.016">
   <properties/>
-  <testcase name="test_getFechaActual" classname="org.gradle.Fechatest" time="0.006"/>
+  <testcase name="test_getFechaActual" classname="org.gradle.Fechatest" time="0.0"/>
   <testcase name="test_nombre_mes" classname="org.gradle.Fechatest" time="0.0"/>
   <testcase name="test_numero_mes" classname="org.gradle.Fechatest" time="0.0"/>
   <testcase name="test_get_mesactual" classname="org.gradle.Fechatest" time="0.0"/>
