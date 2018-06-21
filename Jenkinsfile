@@ -17,9 +17,17 @@ pipeline {
 				    archiveArtifacts 'webAppdemo/quickstart/build/reports/tests/test/**/*'
             }
         }
-		stage('Deploy'){
+				stage('Sonarqube'){
+					steps{
+						echo 'Starting sonarqube task'
+						sh './webAppdemo/quickstart/gradlew sonarqube -p webAppdemo/quickstart'
+					}
+				}
+				stage('Deploy'){
             steps{
                 echo 'Deploying...'
+								sh './webAppdemo/quickstart/gradlew build -p webAppdemo/quickstart'
+								sh './webAppdemo/quickstart/gradlew -b deploy.gradle deploy webAppdemo/quickstart'
             }
         }
     }
