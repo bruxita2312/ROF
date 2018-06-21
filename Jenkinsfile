@@ -5,14 +5,14 @@ pipeline {
             steps{
 			    checkout scm
                 echo 'Building...'
-                sh './webAppdemo/quickstart/gradlew assemble -P webAppdemo'
+                sh './webAppdemo/quickstart/gradlew assemble -p webAppdemo/quickstart'
 				archiveArtifacts 'webAppdemo/build/libs/quickstart.war'
             }
         }
         stage('Test'){
             steps{
                 echo 'Testing...'
-                sh './webAppdemo/quickstart/gradlew test -P webappdemo'
+                sh './webAppdemo/quickstart/gradlew test -p webappdemo/quickstart'
 				junit 'webAppdemo/build/test-results/test/*.xml'
 				archiveArtifacts 'webAppdemo/build/reports/tests/test/**/*'
             }
