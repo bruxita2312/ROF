@@ -8,7 +8,7 @@ ssh.settings {
 
 remotes {
     development {
-        host = 10.28.134.94
+        host = '10.28.134.94'
         user = 'ubuntu'
         identity = file("${HOME}/.ssh/id_rsa")
     }
