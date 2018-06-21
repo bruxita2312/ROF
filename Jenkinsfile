@@ -2,22 +2,22 @@ pipeline {
     agent any
     stages{
         stage('Build'){
-            steps{
-			    checkout scm
+           steps{
+		checkout scm
                 echo 'Building...'
-                sh './webAppdemo/gradlew assemble -p webAppdemo'
-				archiveArtifacts 'webAppdemo/build/libs/quickstart.war'
+                sh './webAppdemo/quickstart/gradlew assemble -P webAppdemo'
+		archiveArtifacts 'webAppdemo/build/libs/quickstart.war'
             }
         }
         stage('Test'){
             steps{
                 echo 'Testing...'
-                sh './webAppdemo/gradlew test -p webAppdemo'
-				junit 'webAppdemo/build/test-results/test/*.xml'
-				archiveArtifacts 'webAppdemo/build/reports/tests/test/**/*'
+                sh './webAppdemo/quickstart/gradlew test -P webappdemo'
+		junit 'webAppdemo/build/test-results/test/*.xml'
+		archiveArtifacts 'webAppdemo/build/reports/tests/test/**/*'
             }
         }
-		stage('Deploy'){
+	stage('Deploy'){
             steps{
                 echo 'Deploying...'
             }
