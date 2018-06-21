@@ -27,7 +27,7 @@ pipeline {
             steps{
                 echo 'Deploying...'
 								sh './webAppdemo/quickstart/gradlew build -p webAppdemo/quickstart'
-								sh './webAppdemo/quickstart/gradlew -b webAppdemo/quickstart/deploy.gradle deploy quickstart'
+								sh './webAppdemo/quickstart/gradlew -b webAppdemo/quickstart/deploy.gradle deploy -p webAppdemo/quickstart'
             }
         }
     }
