@@ -12,7 +12,7 @@ pipeline {
         stage('Test'){
             steps{
                 echo 'Testing...'
-                sh './webAppdemo/quickstart/gradlew test -p webappdemo/quickstart'
+                sh './webAppdemo/quickstart/gradlew test -p webAppdemo/quickstart'
 				junit 'webAppdemo/build/test-results/test/*.xml'
 				archiveArtifacts 'webAppdemo/build/reports/tests/test/**/*'
             }
