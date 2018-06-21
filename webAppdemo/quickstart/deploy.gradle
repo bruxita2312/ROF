@@ -4,12 +4,11 @@ plugins {
 
 ssh.settings {
     knownHosts = allowAnyHosts
-
 }
 
 remotes {
     development {
-        host = ${HOST}
+        host = 10.28.134.94
         user = 'ubuntu'
         identity = file("${HOME}/.ssh/id_rsa")
     }
