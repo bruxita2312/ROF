@@ -13,8 +13,8 @@ pipeline {
           steps{
             echo 'Testing...'
             sh './webAppdemo/quickstart/gradlew test -p webAppdemo/quickstart'
-				    junit './webAppdemo/quickstart/build/test-results/test/*.xml'
-				    archiveArtifacts './webAppdemo/quickstart/build/reports/tests/test/**/*'
+				    junit 'webAppdemo/quickstart/build/test-results/test/*.xml'
+				    archiveArtifacts 'webAppdemo/quickstart/build/reports/tests/test/**/*'
             }
         }
 		stage('Deploy'){
